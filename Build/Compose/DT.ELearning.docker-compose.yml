@@ -1,0 +1,14 @@
+version: "3"
+networks:
+  dt-elearning-network:
+
+services:
+  dtelearningsqlserver:
+    container_name: dtelearningsqlserver
+    networks:
+      - dt-elearning-network
+    ports:
+      - "1433:1433"
+    build:
+      dockerfile: ./Build/Docker/DT.ELearning.SqlDb.dockerfile
+      context: ..\..\
